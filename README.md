@@ -55,7 +55,7 @@ Career Camp is a student management project developed using the Model-View-Contr
 We welcome contributions from the community! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
 ## Live Project
-[Live Project](https://student-interview-management-application.onrender.com)
+[Live Project](https://student-interview-management-app.onrender.com)
 
   
 
