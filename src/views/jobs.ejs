@@ -1,0 +1,23 @@
+<h1>Job Listings</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Company</th>
+            <th>Location</th>
+            <th>Employment Type</th>
+            <th>Job URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% data.forEach(job => { %>
+            <tr>
+                <td><%= job.job_title %></td>
+                <td><%= job.employer_name %></td>
+                <td><%= job. job_city %>  <%= job. job_state %></td>
+                <td><%= job.job_employment_type %></td>
+                <td><a href="<%= job.job_apply_link %>" target="_blank">View Job</a></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>

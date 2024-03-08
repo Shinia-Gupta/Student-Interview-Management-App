@@ -1,0 +1,39 @@
+<h2 class="mt-4 mb-4">Update Interview Status</h2>
+<%if(errMsg){%>
+    <div class="alert alert-danger">
+        <%=errMsg%>
+    </div>
+    <%}else{%>
+
+        <div></div>
+        <%}%>
+            <form action="/update-status" method="POST">
+                <div class="mb-3">
+                    <label for="studentId" class="form-label">Student ID</label>
+                    <input type="text" class="form-control" id="studentId" name="studentId" value="<%=student._id%>"
+                        readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="interviewId" class="form-label">Interview ID</label>
+                    <input type="text" class="form-control" id="interviewId" name="interviewId"
+                        value="<%=interview._id%>" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="status" class="form-label">Result Status</label>
+                    <select class="form-select" id="status" name="resStatus">
+                        <option value="Pass">Pass</option>
+                        <option value="Fail">Fail</option>
+                        <option value="Did not attempt">Did not attempt</option>
+                        <option value="On Hold">On Hold</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="status" class="form-label">Status</label>
+                    <select class="form-select" id="status" name="status">
+                        <option value="placed">Placed</option>
+                        <option value="Not placed">Not placed</option>
+
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Status</button>
+            </form>

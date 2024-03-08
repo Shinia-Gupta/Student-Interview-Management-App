@@ -1,0 +1,59 @@
+<h2 class="mt-4 mb-4">Add Student</h2>
+<%if(errMsg){%>
+    <div class="alert alert-danger" >
+      <%=errMsg%>
+    </div>
+    <%}else{%>
+      
+    <div></div><%}%>
+<form action="/add-student" method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="college" class="form-label">College</label>
+        <input type="text" class="form-control" id="college" name="college" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="batch" class="form-label">Batch</label>
+        <input type="text" class="form-control" id="batch" name="batch" required>
+    </div>
+    <div class="mb-3">
+        <label for="status" class="form-label">Placement Status</label>
+        <select class="form-select" id="status" name="status" required>
+            <option value="placed">Placed</option>
+            <option value="Not placed">Not Placed</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="dscore" class="form-label">DSA Score</label>
+        <input type="number" class="form-control" id="dscore" name="dscore" required>
+    </div>
+    <div class="mb-3">
+        <label for="wscore" class="form-label">WebD Score</label>
+        <input type="number" class="form-control" id="wscore" name="wscore" required>
+    </div>
+    <div class="mb-3">
+        <label for="wscore" class="form-label">React Score</label>
+        <input type="number" class="form-control" id="rcore" name="rscore" required>
+    </div>
+    <!-- <div class="mb-3">
+        <label for="result" class="form-label">Interview Result</label>
+        <select class="form-select" id="result" name="result" required>
+            <option value="Pass">Pass</option>
+            <option value="Fail">Fail</option>
+            <option value="On Hold">On Hold</option>
+            <option value="Did not attempt">Did not attempt</option>
+        </select>
+    </div> -->
+    <!-- <div class="mb-3">
+        <label for="interviewid" class="form-label">Interview ID</label>
+        <input type="text" class="form-control" id="interviewid" name="interviewid">
+    </div> -->
+    <button type="submit" class="btn btn-primary">Add Student</button>
+</form>

@@ -1,0 +1,21 @@
+import express from "express";
+import { EmployeeController } from "../controllers/employee.controller.js";
+import jwtAuth from "../middlewares/jwtAuth.middleware.js";
+const empController=new EmployeeController();
+const empRouter=express.Router();
+
+empRouter.get('/',empController.getRegister);
+empRouter.post('/',empController.registerEmployee);
+empRouter.get('/login',empController.getLogin);
+empRouter.post('/login',empController.loginEmployee);
+empRouter.get('/view-students',jwtAuth,empController.getAllStudents);
+empRouter.get('/add-student',jwtAuth,empController.getaddStudent);
+empRouter.get('/schedule-interview',jwtAuth,empController.getarrangeInterviewForStudent);
+empRouter.post('/schedule-interview',jwtAuth,empController.arrangeInterviewForStudent);
+empRouter.post('/add-student',jwtAuth,empController.addStudent);
+empRouter.get('/logout',jwtAuth,empController.logout);
+empRouter.get('/update-status',jwtAuth,empController.getInterviewStatus);
+empRouter.post('/update-status',jwtAuth,empController.setInterviewStatus);
+empRouter.get('/search',jwtAuth,empController.searchStudents);
+empRouter.get('/download-file',jwtAuth,empController.downloadCsv);
+export default empRouter;

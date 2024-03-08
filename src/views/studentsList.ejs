@@ -1,0 +1,81 @@
+            <h1 class="text-center mb-4">Student Information</h1>
+
+<% if (errMsg) { %>
+<div class="alert alert-danger">
+    <%= errMsg %>
+</div>
+<% } else { %>
+<div></div>
+<% } %>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Student College</th>
+                <th>Student Email</th>
+                <th>Student Batch</th>
+                <th>Placement Status</th>
+                <th>DSA Score</th>
+                <th>WebD Score</th>
+                <th>React Score</th>
+                <th>Interview</th>
+                <th>Schedule</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% students.forEach(student => { %>
+            <tr>
+                <td><%= student._id %></td>
+                <td><%= student.student_Name %></td>
+                <td><%= student.student_College %></td>
+                <td><%= student.student_Email %></td>
+                <td><%= student.student_Batch %></td>
+                <td><%= student.student_Placement_Status %></td>
+                <td><%= student.student_DSA_Score %></td>
+                <td><%= student.student_Webd_Score %></td>
+                <td><%= student.student_React_Score %></td>
+                <td>
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th class="align-center">Interview ID</th>
+                                <th>Interview Date</th>
+                                <th>Interview Company</th>
+                                <th>Interview Result</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% student.interviews.forEach(interview => { %>
+                            <tr>
+                                <td><%= interview.interviewId %></td>
+                                <td><%= interview.interview_Date %></td>
+                                <td><%= interview.interview_Company %></td>
+                                <td><%= interview.interview_Result %></td>
+                                <td>
+                                    <a href="/update-status?interviewId=<%=interview.interviewId%>&studentId=<%=student._id%>"
+                                        class="btn btn-primary">Update Status</a>
+                                </td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </td>
+                <td>
+                    <div class="text-center">
+                        <a href="/schedule-interview?studentId=<%=student._id%>"
+                            class="btn btn-primary">Schedule Interview</a>
+                    </div>
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<div class="text-center">
+    <a href="/download-file" class="btn btn-primary">Download data</a>
+</div>
